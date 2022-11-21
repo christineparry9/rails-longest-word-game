@@ -1,14 +1,19 @@
-<div class="container mt-5">
+<div class="container mt-5 p-5">
+<div class="card text-center p-5 bg-light shadow-lg p-3 mb-5 bg-white rounded" style="width: 30rem;">
 <h1>New Game</h1>
-<ul class="list-inline">
+<%# <ul class="list-inline"> %>
+ <div class="btn-group" p-2>
   <% @letters.each do |letter| %>
-    <li class="list-inline-item"><%= letter %></li>
+    <h1 class="btn btn-primary border rounded"><%= letter %><h1>
   <% end %>
-</ul>
-<p>What is the longest word you can</p>
+  </div>
+<%# </ul> %>
+<p>What is the longest word you can find?</p>
 <form action="/score" data-turbo="false" method="post" >
   <input type="text" name="word">
   <input class="btn btn-warning" type="submit" value="play">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+   <%= hidden_field_tag :letters, @letters %>
 </form>
+</div>
 </div>

@@ -1,3 +1,8 @@
-<%= @word %>
+<div class="container mt-5 p-5"">
+<div class="card text-center p-5 bg-light shadow-lg p-3 mb-5 bg-white rounded" style="width: 30rem;" ">
+<p>-<%= @word %></p>
 <br>
-<%= @result %>
+<h1><%= @result %> </h1>
+<%= link_to "play again", new_path, class: "link-dark" %>
+</div>
+</div>
